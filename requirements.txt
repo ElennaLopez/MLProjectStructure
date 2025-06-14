@@ -8,3 +8,5 @@ xgboost
 dill
 Flask
 ipykernel
+
+#-e .
