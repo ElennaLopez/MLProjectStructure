@@ -55,3 +55,18 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, params=None):
     
     return model_report
 
+def load_object(file_path):
+    """
+    Load a Python object from a file using dill.
+    
+    Parameters:
+    - file_path: Path to the file containing the serialized object
+    
+    Returns:
+    - The deserialized object
+    """
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise CustomException(e, sys)
